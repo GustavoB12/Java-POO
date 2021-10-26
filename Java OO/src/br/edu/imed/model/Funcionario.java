@@ -6,7 +6,21 @@ public class Funcionario {
 	private String cpf;
 	private Double salario;
 
-	
+	public double obterBonus() {
+
+		return this.salario * 0.1;
+	}
+
+	public Funcionario(String nome) {
+		this.nome = nome;
+	}
+
+	public void mostrarDados() {
+		System.out.println(this.nome);
+		System.out.println(this.obterBonus());
+
+	}
+
 	public String getNome() {
 		return nome;
 	}

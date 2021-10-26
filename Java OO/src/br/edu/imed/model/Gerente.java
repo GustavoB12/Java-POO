@@ -3,10 +3,18 @@ package br.edu.imed.model;
 public class Gerente extends Funcionario {
 
 	private String senha;
-	private String quantidadeFuncionarioGerenciado;
-	
-	public Gerente(String nome) {
-		this.setNome(nome);
+	private Integer quantidadeFuncionarioGerenciado;
+
+	@Override
+	public double obterBonus() {
+
+		return super.obterBonus() + 100;
+		// return this.getSalario() * 0.15;
+	}
+
+	public Gerente(String nome, Integer qt) {
+		super(nome);
+		this.quantidadeFuncionarioGerenciado = qt;
 	}
 
 	public String getSenha() {
@@ -17,11 +25,11 @@ public class Gerente extends Funcionario {
 		this.senha = senha;
 	}
 
-	public String getQuantidadeFuncionarioGerenciado() {
+	public Integer getQuantidadeFuncionarioGerenciado() {
 		return quantidadeFuncionarioGerenciado;
 	}
 
-	public void setQuantidadeFuncionarioGerenciado(String quantidadeFuncionarioGerenciado) {
+	public void setQuantidadeFuncionarioGerenciado(Integer quantidadeFuncionarioGerenciado) {
 		this.quantidadeFuncionarioGerenciado = quantidadeFuncionarioGerenciado;
 	}
 
